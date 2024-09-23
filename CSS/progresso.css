@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+.title_homeP {
+    margin-top: 110px;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 50px;
+    max-width: 960px;
+}
+
+.box {
+    background: #fff;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    box-shadow: rgba(149, 42, 255, 0.4) -5px 5px, rgba(255, 142, 0, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+    transition: transform 0.2s;
+    border-radius: 15px;
+}
+
+@media (min-width: 768px) {
+    .box {
+        margin-bottom: 20px;
+    }
+}
+
+.box .percent {
+    width: 150px;
+    height: 150px;
+    position: relative;
+}
+
+.box .percent svg {
+    width: 150px;
+    height: 150px;
+}
+
+.box .percent svg circle {
+    fill: none;
+    stroke-width: 10;
+    stroke: #000;
+    transform: translate(5px, 5px);
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+    stroke-linecap: round;
+}
+
+.box .percent svg circle:nth-child(1) {
+    stroke-dashoffset: 0;
+    stroke: #f3f3f3;
+}
+
+.box .percent svg circle:nth-child(2) {
+    stroke: #695cfe;
+    transition: stroke-dashoffset 0.3s linear;
+}
+
+.box .percent .num {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    color: #111;
+}
+
+.box .percent .num h2 {
+    font-size: 48px;
+}
+
+.box .percent .num h2 span {
+    font-size: 24px;
+}
+
+.box .text {
+    padding: 10px 0 0;
+    color: #4d4d4d;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* ------------ Isolando a Seta ---------------- */
+.indicator {
+    position: absolute;
+    top: 35%;
+    right: 70px;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    transform: rotate(45deg);
+}
+
+.indicator span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60%;
+    height: 60%;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 3px solid #695cfe;
+    border-right: 3px solid #695cfe;
+    animation: animate 1s linear infinite;
+}
+
+.indicator span:nth-child(1) {
+    top: -30px;
+    left: -30px;
+    animation-delay: 0s;
+}
+
+.indicator span:nth-child(2) {
+    top: -15px;
+    left: -15px;
+    animation-delay: 0.2s;
+}
+
+.indicator span:nth-child(3) {
+    top: 0;
+    left: 0;
+    animation-delay: 0.4s;
+}
+
+.indicator span:nth-child(4) {
+    top: 15px;
+    left: 15px;
+    animation-delay: 0.6s;
+}
+
+.indicator span:nth-child(5) {
+    top: 30px;
+    left: 30px;
+    animation-delay: 0.8s;
+}
+
+@keyframes animate {
+    0% {
+        border-color: #f600ea;
+        transform: translate(0, 0);
+    }
+
+    20% {
+        border-color: #f600ea;
+        transform: translate(15px, 15px);
+    }
+
+    20.1%,
+    100% {
+        border-color: #695cfe;
+    }
+}
+

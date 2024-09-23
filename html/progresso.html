@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <title>CodeWithUs</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../imgs/image-removebg-preview.png" type="image/png">
+    <link rel="stylesheet" href="../CSS/progresso.css">
+</head>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body>
+
+    <div class="title_homeP">
+        <h1>Parabens!<br> Veja o seu <span>progresso</span></h1>
+    </div>
+
+    <div class="top-rectangle"></div>
+
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="logo.png" alt="">
+                </span>
+
+                <div class="text logo-text">
+                    <span class="name">CodeWithUs</span>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Procurar cursos">
+                </li>
+
+                <!-- <li class="nav-link">
+            <a href="../public/html/login.html">
+              <i class='bx bx-log-in-circle icon'></i>
+              <span class="text nav-text">Cadastrar</span>
+            </a>
+          </li> -->
+
+                <li class="nav-link">
+                    <a href="../html/index_after.html">
+                        <i class='bx bx-user icon'></i>
+                        <span class="text nav-text">Meus dados</span>
+                    </a>
+                </li>
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="../html/index_after.html">
+                            <i class='bx bx-home-alt icon'></i>
+                            <span class="text nav-text">Inicio</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="../html/progresso.html">
+                            <i class='bx bx-bar-chart-alt-2 icon'></i>
+                            <span class="text nav-text">Progresso</span>
+                        </a>
+                    </li>
+                    <!-- 
+          <li class="nav-link">
+            <a href="#">
+              <i class='bx bx-bell icon'></i>
+              <span class="text nav-text">Notifications</span>
+            </a>
+          </li> -->
+
+                    <!-- <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-pie-chart-alt icon'></i>
+                            <span class="text nav-text">Pontuação</span>
+                        </a>
+                    </li> -->
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-code-curly icon'></i>
+                            <span class="text nav-text">Meus cursos</span>
+                        </a>
+                    </li>
+
+                    <!-- <li class="nav-link">
+            <a href="#">
+              <i class='bx bx-wallet icon'></i>
+              <span class="text nav-text">Wallets</span>
+            </a>
+          </li> -->
+
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="#">
+                        <i class='bx bx-log-out-circle icon'></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <img src="../imgs/logo.png" alt="Imagem" class="top-right-image">
+
+    <script src="../script.js"></script>
+
+    <div class="indicator">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="container">
+        <div class="box" data-progress="100">
+            <h2 class="text">Progresso HTML</h2>
+            <br> <br>
+            <div class="percent">
+                <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70" class="progress-circle"></circle>
+                </svg>
+                <div class="num">
+                    <h2 class="progress-num">10<span>%</span></h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="box" data-progress="30">
+            <h2 class="text">Progresso CSS</h2>
+            <br> <br>
+            <div class="percent">
+                <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70" class="progress-circle"></circle>
+                </svg>
+                <div class="num">
+                    <h2 class="progress-num">30<span>%</span></h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="box" data-progress="0">
+            <h2 class="text">Progresso JavaScript <br> Node.js</h2>
+            <br>
+            <div class="percent">
+                <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70" class="progress-circle"></circle>
+                </svg>
+                <div class="num">
+                    <h2 class="progress-num">0<span>%</span></h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="box" data-progress="0">
+            <h2 class="text">Progresso MySql</h2>
+            <br> <br>
+            <div class="percent">
+                <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70" class="progress-circle"></circle>
+                </svg>
+                <div class="num">
+                    <h2 class="progress-num">0<span>%</span></h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="box" data-progress="0">
+            <h2 class="text">Progresso Git</h2>
+            <br> <br>
+            <div class="percent">
+                <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70" class="progress-circle"></circle>
+                </svg>
+                <div class="num">
+                    <h2 class="progress-num">0<span>%</span></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="../JavaScript/progresso.js"></script>
+</body>
+
+</html>
+
+</html>

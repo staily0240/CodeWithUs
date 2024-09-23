@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeWithUs</title>
+    <link rel="stylesheet" href="../CSS/cadastro.css" />
+    <link rel="stylesheet" href="../styles.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <div class="card">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="../imgs/1.svg" />
+            <h2>Bem vindo!</h2>
+            <h3>Entre com seu E-mail</h3>
+            <input
+              spellcheck="false"
+              oninput="checkValid(event)"
+              type="text"
+              placeholder="CodeWithUs@gmail.com"
+            />
+            <button disabled type="button" onclick="gotoSlide(1)">Próximo</button>
+          </div>
+          <div class="swiper-slide">
+            <div className="image-wrapper">
+              <img src="../imgs/2.svg" />
+            </div>
+            <h2>Senha</h2>
+            <h3>Entre com uma senha forte</h3>
+            <input
+              oninput="checkValid(event)"
+              type="password"
+              placeholder="Sua senha"
+            />
+            <button disabled type="button" onclick="gotoSlide(2)">Próximo</button>
+          </div>
+          <div class="swiper-slide">
+            <div className="image-wrapper">
+              <img src="../imgs/3.svg" />
+            </div>
+            <h2>Fim</h2>
+            <h3>Curta seus cursos!</h3>
+            <button class="secondary" onclick="restart()">Refazer Cadastro</button>
+            <button type="submit" onClick="window.location.href='../html/login.html';">Salvar Cadastro</button>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="../JavaScript/login.js"></script>
+  </body>
+</html>

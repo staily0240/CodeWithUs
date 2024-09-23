@@ -1,0 +1,123 @@
+html,
+body {
+  height: 100%;
+}
+
+:root {
+  --color-primary: #6b63ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  place-items: center;
+  color: #2f2e41;
+  background: #f9f5ff;
+  font-family: "Euclid Circular A";
+  text-align: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  height: 520px;
+  padding: 80px 0 0;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 10px 8px 6px #bbbac5;
+}
+
+img {
+  margin: 0 auto 10px;
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+}
+
+h2 {
+  margin: 0 0 6px;
+}
+
+h3 {
+  color: #69687a;
+  margin: 0 0 34px;
+  font-weight: 400;
+  font-size: 14px;
+  align-self: stretch;
+}
+
+button,
+input {
+  height: 48px;
+  width: 270px;
+  margin: 0 40px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: inherit;
+  outline: none;
+  text-align: center;
+}
+
+input {
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.16);
+  padding: 12px;
+  margin-bottom: 8px;
+  color: inherit;
+  transition: border 0.3s;
+}
+
+input:focus {
+  border-style: solid;
+  border-color: #c7c5d3;
+}
+
+input::placeholder {
+  color: rgba(0, 0, 0, 0.24);
+}
+
+button {
+  background: var(--color-primary);
+  color: #f9f9f9;
+  border: 0;
+  cursor: pointer;
+  transition: 0.175s;
+}
+
+button:disabled {
+  background: #e1e0e8;
+  color: #bbbac5;
+  cursor: not-allowed;
+}
+
+button.secondary {
+  background: #f7f7fb;
+  color: #68677c;
+  margin-bottom: 8px;
+}
+
+button[type="submit"] {
+  margin-bottom: 8px;
+}
+
+.swiper {
+  height: 100%;
+  width: 100%;
+}
+
+body .swiper-horizontal > .swiper-pagination-bullets {
+  bottom: 42px;
+  left: 50%;
+  translate: -50% 0;
+}
+
+body .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+  scale: 1.5;
+  margin: 0 6px;
+  background: var(--color-primary);
+}
