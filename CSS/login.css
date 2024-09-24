@@ -269,3 +269,8 @@
     margin: 20px;
   }
   
+  .error-icon {
+    color: red; /* Define a cor do ícone como vermelho */
+    margin-right: 5px; /* Adiciona um pequeno espaço à direita do ícone */
+  }
+  
