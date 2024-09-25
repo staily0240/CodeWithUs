@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8" />
@@ -33,7 +33,27 @@
           <input oninput="checkValid(event)" type="password" placeholder="Sua senha" name="senha" id="senha" />
           <button id="btn-senha" disabled type="button" onclick="gotoSlide(2)">Próximo</button>
         </div>
-        <!-- Slide 3: Confirmação -->
+        <!-- Slide 3: Username -->
+        <div class="swiper-slide">
+          <div class="image-wrapper">
+            <img src="../imgs/img_4-removebg-preview.png" />
+          </div>
+          <h2>Username</h2>
+          <h3>Entre com seu nome de usuário</h3>
+          <input oninput="checkValid(event)" type="text" placeholder="Seu nome de usuário" name="username" id="username" maxlength="20" />
+          <button id="btn-username" disabled type="button" onclick="gotoSlide(3)">Próximo</button>
+        </div>
+        <!-- Slide 4: Telefone -->
+        <div class="swiper-slide">
+          <div class="image-wrapper">
+            <img src="../imgs/img_4-removebg-preview.png" />
+          </div>
+          <h2>Celular</h2>
+          <h3>Entre com seu número</h3>
+          <input oninput="checkValid(event)" type="tel" placeholder="(XX) XXXXX-XXXX" name="telefone" id="telefone" pattern="\(\d{2}\) \d{5}-\d{4}" />
+          <button id="btn-telefone" disabled type="button" onclick="gotoSlide(4)">Próximo</button>
+        </div>
+        <!-- Slide 5: Confirmação -->
         <div class="swiper-slide">
           <div class="image-wrapper">
             <img src="../imgs/3.svg" />
@@ -41,7 +61,7 @@
           <h2>Fim</h2>
           <h3>Curta seus cursos!</h3>
           <button class="secondary" onclick="restart()">Refazer Cadastro</button>
-          <button type="submit" onclick="saveCadastro()">Salvar Cadastro</button> <!-- Alteração aqui -->
+          <button type="submit" onclick="saveCadastro()">Salvar Cadastro</button>
         </div>
       </div>
       <div class="swiper-pagination"></div>
@@ -50,29 +70,39 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script>
-    const swiper = new Swiper('.swiper', {
-      pagination: {
-        el: '.swiper-pagination',
-      },
-      allowSlideNext: false, // Disable slide-next initially
-    });
-
-    // Função para validar campos e liberar o botão 'Próximo'
+    // Função para verificar a validade dos campos e habilitar os botões
     function checkValid(event) {
-      const field = event.target;
       const email = document.getElementById('email').value;
       const senha = document.getElementById('senha').value;
-      
-      if (field.name === "email") {
+      const username = document.getElementById('username').value;
+      const telefone = document.getElementById('telefone').value;
+
+      // Validação de e-mail
+      if (event.target.name === "email") {
         const emailValid = validateEmail(email);
         document.getElementById('btn-email').disabled = !emailValid;
-      } else if (field.name === "senha") {
+      }
+
+      // Validação de senha
+      if (event.target.name === "senha") {
         const senhaValid = senha.length >= 6;
         document.getElementById('btn-senha').disabled = !senhaValid;
       }
+
+      // Validação de nome de usuário
+      if (event.target.name === "username") {
+        const isUsernameValid = username.length >= 3;
+        document.getElementById('btn-username').disabled = !isUsernameValid;
+      }
+
+      // Validação de telefone
+      if (event.target.name === "telefone") {
+        const isTelefoneValid = telefone.match(/\(\d{2}\) \d{5}-\d{4}/);
+        document.getElementById('btn-telefone').disabled = !isTelefoneValid;
+      }
     }
 
-    // Função simples de validação de e-mail
+    // Função de validação de e-mail
     function validateEmail(email) {
       const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       return re.test(String(email).toLowerCase());
@@ -80,22 +110,32 @@
 
     // Função para mover para o próximo slide
     function gotoSlide(index) {
-      swiper.allowSlideNext = true; // Ativar navegação ao próximo slide
+      swiper.allowSlideNext = true;
       swiper.slideTo(index);
-      swiper.allowSlideNext = false; // Desativar navegação para futuros cliques
+      swiper.allowSlideNext = false;
     }
+
+    // Swiper inicializado
+    const swiper = new Swiper('.swiper', {
+      pagination: {
+        el: '.swiper-pagination',
+      },
+      allowSlideNext: false,
+    });
 
     // Função para salvar o cadastro
     async function saveCadastro() {
       const email = document.getElementById('email').value;
       const senha = document.getElementById('senha').value;
+      const username = document.getElementById('username').value;
+      const telefone = document.getElementById('telefone').value; // Obter o valor do telefone
 
       const response = await fetch('/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, senha }),
+        body: JSON.stringify({ email, senha, username, telefone }), // Inclua o telefone no corpo da requisição
       });
 
       if (response.ok) {
@@ -106,13 +146,17 @@
       }
     }
 
-    // Reinicia o cadastro, voltando ao primeiro slide
+    // Função para reiniciar o cadastro
     function restart() {
       swiper.slideTo(0);
       document.getElementById('email').value = '';
       document.getElementById('senha').value = '';
+      document.getElementById('username').value = ''; // Limpar o campo de username
+      document.getElementById('telefone').value = ''; // Limpar o campo de telefone
       document.getElementById('btn-email').disabled = true;
       document.getElementById('btn-senha').disabled = true;
+      document.getElementById('btn-username').disabled = true;
+      document.getElementById('btn-telefone').disabled = true;
     }
   </script>
 </body>
