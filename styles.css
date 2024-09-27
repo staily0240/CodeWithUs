@@ -6,6 +6,8 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  font-family: 'Chakra Petch', sans-serif;
+
 }
 
 :root {
@@ -55,7 +57,7 @@ body.dark {
   background: var(--sidebar-color);
   transition: var(--tran-05);
   z-index: 100;
-  
+
 }
 
 .sidebar.close {
@@ -483,7 +485,7 @@ body.dark .home .text {
   margin: 0 auto;
   margin-top: 35%;
   margin-left: 19%;
-  z-index: -1;
+  z-index: 1;
 }
 
 .ag-courses_box {
@@ -637,4 +639,205 @@ body.dark .home .text {
   .ag-courses-item_date-box {
     font-size: 16px;
   }
+}
+
+/* ------------------------------------------------------------- */
+
+body {
+  display: grid;
+  grid-template-rows: 1fr 10rem auto;
+  grid-template-areas: "main" "." "footer";
+  overflow-x: hidden;
+  /* background: #F5F7FA; */
+  min-height: 100vh;
+  font-family: "Open Sans", sans-serif;
+}
+
+body .footer {
+  /* z-index: 1; */
+  --footer-background: #695cfe;
+  display: grid;
+  position: relative;
+  grid-area: footer;
+  min-height: 12rem;
+}
+
+body .footer .bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1rem;
+  background: var(--footer-background);
+  filter: url("#blob");
+}
+
+body .footer .bubbles .bubble {
+  position: absolute;
+  left: var(--position, 50%);
+  background: var(--footer-background);
+  border-radius: 100%;
+  -webkit-animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+  animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+  transform: translate(-50%, 100%);
+}
+
+body .footer .content {
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-gap: 4rem;
+  padding: 2rem;
+  background: var(--footer-background);
+}
+
+body .footer .content a,
+body .footer .content p {
+  color: #F5F7FA;
+  text-decoration: none;
+}
+
+body .footer .content b {
+  color: white;
+}
+
+body .footer .content p {
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+body .footer .content>div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+body .footer .content>div>div {
+  margin: 0.25rem 0;
+}
+
+body .footer .content>div>div>* {
+  margin-right: 0.5rem;
+}
+
+body .footer .content>div .image {
+  align-self: center;
+  width: 4rem;
+  height: 4rem;
+  margin: 0.25rem 0;
+  background-size: cover;
+  background-position: center;
+}
+
+@-webkit-keyframes bubble-size {
+
+  0%,
+  75% {
+    width: var(--size, 4rem);
+    height: var(--size, 4rem);
+  }
+
+  100% {
+    width: 0rem;
+    height: 0rem;
+  }
+}
+
+@keyframes bubble-size {
+
+  0%,
+  75% {
+    width: var(--size, 4rem);
+    height: var(--size, 4rem);
+  }
+
+  100% {
+    width: 0rem;
+    height: 0rem;
+  }
+}
+
+@-webkit-keyframes bubble-move {
+  0% {
+    bottom: -4rem;
+  }
+
+  100% {
+    bottom: var(--distance, 10rem);
+  }
+}
+
+@keyframes bubble-move {
+  0% {
+    bottom: -4rem;
+  }
+
+  100% {
+    bottom: var(--distance, 10rem);
+  }
+}
+
+.contato {
+  margin-left: 150px;
+  color: white; 
+  margin-bottom: 40px  ;
+}
+.contato h2 {
+  display: flex;
+  align-items: center; 
+  margin-bottom: 10px; 
+}
+.contato h2 i {
+  margin-right: 8px; 
+}
+
+.portfolio-section {
+  margin-left: 70px; 
+  color: white;
+  
+}
+
+.portfolio-section {
+  margin-left: -690px;
+}
+.portfolio-section h2 {
+  margin-bottom: 5px;
+  margin-left: 0; 
+  font-size: 25px;
+}
+.portfolio-section h3 {
+  margin-top: 5px;
+  margin-left: 0; 
+  font-size: 20px; 
+}
+.portfolio-section h3l {
+  margin-top: 20px;
+  margin-left: 0; 
+  font-size: 20px; 
+}
+
+.sociais-section {
+  margin-left: 70px; 
+  color: white;
+  
+}
+
+.sociais-section {
+  margin-left: 950px;
+  margin-top: -220px;
+}
+.sociais-section h2 {
+  margin-bottom: 5px;
+  margin-left: 0; 
+  font-size: 25px;
+}
+.sociais-section h3 {
+  margin-top: 5px;
+  margin-left: 0; 
+  font-size: 20px;
+}
+.sociais-section h3l {
+  margin-top: 20px;
+  margin-left: 0; 
+  font-size: 20px;
 }
