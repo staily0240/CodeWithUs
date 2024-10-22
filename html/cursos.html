@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <title>CodeWithUs</title>
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="../CSS/dados.css">
+    <link rel="stylesheet" href="../CSS/cursos.css">
     <link rel="icon" href="../imgs/image-removebg-preview.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -127,101 +127,57 @@
 
         <img src="../imgs/logo.png" alt="Imagem" class="top-right-image">
 
-        <div class="profile-card">
-            <input type="file" id="fileInput" accept="image/*" style="display: none;"
-                onchange="changeProfilePicture(event)">
-            <img id="profileImage" class="profile-img" src="https://i.pravatar.cc/75" alt="User Profile Picture"
-                onclick="document.getElementById('fileInput').click();">
-            <div class="user-info">
-                <h2 id="username">Jane Smith</h2>
-                <p id="useremail">jane.smith@example.com</p>
-                <p id="userphone">+55 12 34567-8901</p>
-            </div>
+        <script src="../script.js"></script>
 
-            <div class="actions">
-                <button onclick="changeNickname()"><strong>Change Nickname</strong></button>
-                <button onclick="changePassword()"><strong>Change Password</strong></button>
-                <button onclick="changePhoneNumber()"><strong>Change Phone Number</strong></button>
-                <button onclick="deleteAccount()"><strong>Delete Account</strong></button>
+        <div class="main-container">
+            <div class="heading">
+                <h1 class="heading__title">Gradient Banner Cards</h1>
+                <p class="heading__credits"><a class="heading__link" target="_blank">Seus cursos</a></p>
+            </div>
+            <div class="cards">
+                <div class="card card-1">
+                    <div class="card__icon"><i class="fas fa-bolt"></i></div>
+                    <p class="card__exit"><i class="fas fa-times"></i></p>
+                    <h2 class="card__title">Aulas de Html 5</h2>
+                    <p class="card__apply">
+                        <a class="card__link" href="#">Continuar curso <i class="fas fa-arrow-right"></i></a>
+                    </p>
+                </div>
+                <div class="card card-2">
+                    <div class="card__icon"><i class="fas fa-bolt"></i></div>
+                    <p class="card__exit"><i class="fas fa-times"></i></p>
+                    <h2 class="card__title">Aulas Css 3</h2>
+                    <p class="card__apply">
+                        <a class="card__link" href="#">Continuar curso <i class="fas fa-arrow-right"></i></a>
+                    </p>
+                </div>
+                <div class="card card-3">
+                    <div class="card__icon"><i class="fas fa-bolt"></i></div>
+                    <p class="card__exit"><i class="fas fa-times"></i></p>
+                    <h2 class="card__title">Aulas JavaScript + Node.js</h2>
+                    <p class="card__apply">
+                        <a class="card__link" href="#">Continuar curso <i class="fas fa-arrow-right"></i></a>
+                    </p>
+                </div>
+                <div class="card card-4">
+                    <div class="card__icon"><i class="fas fa-bolt"></i></div>
+                    <p class="card__exit"><i class="fas fa-times"></i></p>
+                    <h2 class="card__title">Aulas MySql</h2>
+                    <p class="card__apply">
+                        <a class="card__link" href="#">Continuar curso <i class="fas fa-arrow-right"></i></a>
+                    </p>
+                </div>
+                <div class="card card-5">
+                    <div class="card__icon"><i class="fas fa-bolt"></i></div>
+                    <p class="card__exit"><i class="fas fa-times"></i></p>
+                    <h2 class="card__title">Aulas Git</h2>
+                    <p class="card__apply">
+                        <a class="card__link" href="#">Continuar curso <i class="fas fa-arrow-right"></i></a>
+                    </p>
+                </div>
             </div>
         </div>
 
-        <script>
-            // Simulação de dados de usuário
-            const user = {
-                name: "Jane Smith",
-                email: "jane.smith@example.com",
-                phone: "+55 12 34567-8901",
-                image: "https://i.pravatar.cc/75"
-            };
-
-            // Populando os dados do usuário na página
-            document.getElementById('username').textContent = user.name;
-            document.getElementById('useremail').textContent = user.email;
-            document.getElementById('userphone').textContent = user.phone;
-
-            // Função para mudar a foto de perfil
-            function changeProfilePicture(event) {
-                const file = event.target.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = function (e) {
-                        const profileImage = document.getElementById('profileImage');
-                        profileImage.src = e.target.result;
-                    }
-                    reader.readAsDataURL(file);
-                }
-            }
-
-            // Função para mudar o nickname
-            function changeNickname() {
-                const newNickname = prompt("Enter your new nickname:");
-                if (newNickname) {
-                    user.name = newNickname;
-                    document.getElementById('username').textContent = newNickname;
-                    alert("Nickname changed successfully!");
-                }
-            }
-
-            // Função para mudar a senha
-            function changePassword() {
-                const newPassword = prompt("Enter your new password:");
-                if (newPassword) {
-                    alert("Password changed successfully!");
-                    // Aqui você pode adicionar a lógica para atualizar a senha no backend
-                }
-            }
-
-            // Função para mudar o número de telefone
-            function changePhoneNumber() {
-                const newPhone = prompt("Enter your new phone number:");
-                if (newPhone) {
-                    const confirmationCode = Math.floor(1000 + Math.random() * 9000);
-                    alert(`A confirmation code has been sent to ${newPhone}: ${confirmationCode}`);
-                    const userCode = prompt("Enter the confirmation code:");
-                    if (userCode == confirmationCode) {
-                        user.phone = newPhone;
-                        document.getElementById('userphone').textContent = newPhone;
-                        alert("Phone number changed successfully!");
-                    } else {
-                        alert("Confirmation code is incorrect.");
-                    }
-                }
-            }
-
-            // Função para apagar o cadastro
-            function deleteAccount() {
-                const confirmDelete = confirm("Are you sure you want to delete your account?");
-                if (confirmDelete) {
-                    alert("Your account has been deleted.");
-                    // Aqui você pode adicionar a lógica para deletar o usuário no backend
-                }
-            }
-
-        </script>
-
-        <script src="../script.js"></script>
-        
     </body>
 
     </html>
