@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="../CSS/dados.css">
     <link rel="icon" href="../imgs/image-removebg-preview.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/txt.css">
+
 </head>
 
 <body>
@@ -127,101 +129,22 @@
 
         <img src="../imgs/logo.png" alt="Imagem" class="top-right-image">
 
-        <div class="profile-card">
-            <input type="file" id="fileInput" accept="image/*" style="display: none;"
-                onchange="changeProfilePicture(event)">
-            <img id="profileImage" class="profile-img" src="https://i.pravatar.cc/75" alt="User Profile Picture"
-                onclick="document.getElementById('fileInput').click();">
-            <div class="user-info">
-                <h2 id="username">Jane Smith</h2>
-                <p id="useremail">jane.smith@example.com</p>
-                <p id="userphone">+55 12 34567-8901</p>
-            </div>
+        <div class="texto-cantog">Aula Git!</div>
 
-            <div class="actions">
-                <button onclick="changeNickname()"><strong>Mudar Nickname</strong></button>
-                <button onclick="changePassword()"><strong>Mudar Senha</strong></button>
-                <button onclick="changePhoneNumber()"><strong>Mudar telefone</strong></button>
-                <button onclick="deleteAccount()"><strong>Apagar conta</strong></button>
-            </div>
-        </div>
+        <div style="text-align: center; margin-top: 15%;">
+            <iframe width="300%" height="500" style="margin-top: -30%; 
+                       margin-left: -85%;
+                       border: 8px solid #695cfe; 
+                       border-radius: 15px; 
+                       box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3); 
+                       padding: 10px; 
+                       background-color: #f600ea;" src="https://www.youtube.com/embed/LXswnjdpAUI?si=SwxPhSMP4N8tcdH5">
+            </iframe>
+        </div>   
 
-        <script>
-            // Simulação de dados de usuário
-            const user = {
-                name: "Jane Smith",
-                email: "jane.smith@example.com",
-                phone: "+55 12 34567-8901",
-                image: "https://i.pravatar.cc/75"
-            };
-
-            // Populando os dados do usuário na página
-            document.getElementById('username').textContent = user.name;
-            document.getElementById('useremail').textContent = user.email;
-            document.getElementById('userphone').textContent = user.phone;
-
-            // Função para mudar a foto de perfil
-            function changeProfilePicture(event) {
-                const file = event.target.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = function (e) {
-                        const profileImage = document.getElementById('profileImage');
-                        profileImage.src = e.target.result;
-                    }
-                    reader.readAsDataURL(file);
-                }
-            }
-
-            // Função para mudar o nickname
-            function changeNickname() {
-                const newNickname = prompt("Enter your new nickname:");
-                if (newNickname) {
-                    user.name = newNickname;
-                    document.getElementById('username').textContent = newNickname;
-                    alert("Nickname changed successfully!");
-                }
-            }
-
-            // Função para mudar a senha
-            function changePassword() {
-                const newPassword = prompt("Enter your new password:");
-                if (newPassword) {
-                    alert("Password changed successfully!");
-                    // Aqui você pode adicionar a lógica para atualizar a senha no backend
-                }
-            }
-
-            // Função para mudar o número de telefone
-            function changePhoneNumber() {
-                const newPhone = prompt("Enter your new phone number:");
-                if (newPhone) {
-                    const confirmationCode = Math.floor(1000 + Math.random() * 9000);
-                    alert(`A confirmation code has been sent to ${newPhone}: ${confirmationCode}`);
-                    const userCode = prompt("Enter the confirmation code:");
-                    if (userCode == confirmationCode) {
-                        user.phone = newPhone;
-                        document.getElementById('userphone').textContent = newPhone;
-                        alert("Phone number changed successfully!");
-                    } else {
-                        alert("Confirmation code is incorrect.");
-                    }
-                }
-            }
-
-            // Função para apagar o cadastro
-            function deleteAccount() {
-                const confirmDelete = confirm("Are you sure you want to delete your account?");
-                if (confirmDelete) {
-                    alert("Your account has been deleted.");
-                    // Aqui você pode adicionar a lógica para deletar o usuário no backend
-                }
-            }
-
-        </script>
 
         <script src="../script.js"></script>
-        
+
     </body>
 
     </html>
