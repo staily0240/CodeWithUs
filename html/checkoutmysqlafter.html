@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <title>CodeWithUs</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../CSS/dados.css">
+    <link rel="icon" href="../imgs/image-removebg-preview.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/txt.css">
+    <link rel="stylesheet" href="../CSS/checkout.css">
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    </head>
+
+    <body>
+
+        <div class="top-rectangle"></div>
+
+        <nav class="sidebar close">
+            <header>
+                <div class="image-text">
+                    <span class="image">
+                        <img src="logo.png" alt="">
+                    </span>
+
+                    <div class="text logo-text">
+                        <span class="name">CodeWithUs</span>
+                    </div>
+                </div>
+
+                <i class='bx bx-chevron-right toggle'></i>
+            </header>
+
+            <div class="menu-bar">
+                <div class="menu">
+
+                    <li class="search-box">
+                        <i class='bx bx-search icon'></i>
+                        <input type="text" placeholder="Procurar cursos">
+                    </li>
+
+                    <!-- <li class="nav-link">
+                  <a href="../html/login.html">
+                    <i class='bx bx-log-in-circle icon'></i>
+                    <span class="text nav-text">Login</span>
+                  </a>
+                </li> -->
+
+                    <li class="nav-link">
+                        <a href="../html/dados.html">
+                            <i class='bx bx-user icon'></i>
+                            <span class="text nav-text">Meus dados</span>
+                        </a>
+                    </li>
+
+                    <ul class="menu-links">
+                        <li class="nav-link">
+                            <a href="../html/index_after.html">
+                                <i class='bx bx-home-alt icon'></i>
+                                <span class="text nav-text">Inicio</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-link">
+                            <a href="../html/progresso.html">
+                                <i class='bx bx-bar-chart-alt-2 icon'></i>
+                                <span class="text nav-text">Progresso</span>
+                            </a>
+                        </li>
+                        <!-- 
+                <li class="nav-link">
+                  <a href="#">
+                    <i class='bx bx-bell icon'></i>
+                    <span class="text nav-text">Notifications</span>
+                  </a>
+                </li> -->
+
+                        <!-- <li class="nav-link">
+                    <a href="#">
+                      <i class='bx bx-pie-chart-alt icon'></i>
+                      <span class="text nav-text">Pontuação</span>
+                    </a>
+                  </li> -->
+
+                        <li class="nav-link">
+                            <a href="../html/cursos.html">
+                                <i class='bx bx-code-curly icon'></i>
+                                <span class="text nav-text">Meus cursos</span>
+                            </a>
+                        </li>
+
+                        <!-- <li class="nav-link">
+                  <a href="#">
+                    <i class='bx bx-wallet icon'></i>
+                    <span class="text nav-text">Wallets</span>
+                  </a>
+                </li> -->
+
+                    </ul>
+                </div>
+
+                <div class="bottom-content">
+                    <li class="">
+                        <a href="../index.html">
+                            <i class='bx bx-log-out-circle icon'></i>
+                            <span class="text nav-text">Logout</span>
+                        </a>
+                    </li>
+
+                </div>
+            </div>
+
+        </nav>
+
+        <img src="../imgs/logo.png" alt="Imagem" class="top-right-image">
+
+        <main id="main">
+            <section id="left">
+                <div id="head">
+                    <h1>Codando seu futuro!</h1>
+                    <p>Curso MySql</p>
+                    <img src="../imgs/wired-outline-1331-repository-hover-pinch.gif"
+                        style="width: 175px; height: auto; margin-top: 30px;" />
+                </div>
+                <h3>Apenas 29.99R$</h3>
+            </section>
+
+            <section id="right">
+                <h1>Comprar</h1>
+                <form action="#">
+                    <div id="form-card" class="form-field">
+                        <label for="cc-number">Numero do cartão:</label>
+                        <input id="cc-number" maxlength="19" placeholder="1111 2222 3333 4444" required>
+                    </div>
+
+                    <div id="form-date" class="form-field">
+                        <label for="expiry-month">Data</label>
+                        <div id="date-val">
+                            <select id="expiry-month" required>
+                                <option id="trans-label_month" value="" default="default" selected="selected">Mês
+                                </option>
+                                <option value="1">01</option>
+                                <option value="2">02</option>
+                                <option value="3">03</option>
+                                <option value="4">04</option>
+                                <option value="5">05</option>
+                                <option value="6">06</option>
+                                <option value="7">07</option>
+                                <option value="8">08</option>
+                                <option value="9">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                            <select id="expiry-year" required>
+                                <option id="trans-label_year" value="" default="" selected="selected">Ano</option>
+                                <option value="2018">18</option>
+                                <option value="2019">19</option>
+                                <option value="2020">20</option>
+                                <option value="2021">21</option>
+                                <option value="2022">22</option>
+                                <option value="2023">23</option>
+                                <option value="2024">24</option>
+                                <option value="2025">25</option>
+                                <option value="2026">26</option>
+                                <option value="2027">27</option>
+                                <option value="2028">28</option>
+                                <option value="2029">29</option>
+                                <option value="2030">30</option>
+                                <option value="2031">31</option>
+                                <option value="2032">32</option>
+                                <option value="2033">33</option>
+                                <option value="2034">34</option>
+                                <option value="2035">35</option>
+                                <option value="2036">36</option>
+                                <option value="2037">37</option>
+                                <option value="2038">38</option>
+                                <option value="2039">39</option>
+                                <option value="2040">40</option>
+                                <option value="2041">41</option>
+                                <option value="2042">42</option>
+                                <option value="2043">43</option>
+                                <option value="2044">44</option>
+                                <option value="2045">45</option>
+                                <option value="2046">46</option>
+                                <option value="2047">47</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="form-sec-code" class="form-field">
+                        <label for="sec-code">Codigo de segurança:</label>
+                        <input type="password" maxlength="3" placeholder="123" required>
+                    </div>
+
+                    <button type="submit">Comprar curso</button>
+                </form>
+            </section>
+        </main>
+
+        <script src="../script.js"></script>
+
+    </body>
+
+    </html>
