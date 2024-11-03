@@ -1,0 +1,120 @@
+.button-89 {
+    --b: 3px;
+    --s: .45em;
+    --color: #373B44;
+
+    padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+    color: var(--color);
+    --_p: var(--s);
+    background:
+        conic-gradient(from 90deg at var(--b) var(--b), #0000 90deg, var(--color) 0) var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+    transition: .3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #0000;
+    outline-offset: .6em;
+    font-size: 16px;
+
+    border: 0;
+
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+
+    /* Novas propriedades para ajustar a posição */
+    position: absolute; /* Define o posicionamento absoluto */
+    top: 640px; /* Distância do topo */
+    right: 100px; /* Distância da esquerda */
+}
+
+.button-89:hover,
+.button-89:focus-visible {
+    --_p: 0px;
+    outline-color: var(--color);
+    outline-offset: .05em;
+}
+
+.button-89:active {
+    background: var(--color);
+    color: #fff;
+}
+
+/* ---------------------------------------------------------------------------------- */
+
+.button-90 {
+    --b: 3px;
+    --s: .45em;
+    --color: #373B44;
+
+    padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+    color: var(--color);
+    --_p: var(--s);
+    background:
+        conic-gradient(from 90deg at var(--b) var(--b), #0000 90deg, var(--color) 0) var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+    transition: .3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #0000;
+    outline-offset: .6em;
+    font-size: 16px;
+
+    border: 0;
+
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+
+    /* Novas propriedades para ajustar a posição */
+    position: absolute; /* Define o posicionamento absoluto */
+    top: 1300px; /* Distância do topo */
+    right: 100px; /* Distância da esquerda */
+}
+
+.button-90:hover,
+.button-90:focus-visible {
+    --_p: 0px;
+    outline-color: var(--color);
+    outline-offset: .05em;
+}
+
+.button-90:active {
+    background: var(--color);
+    color: #fff;
+}
+
+/* ------------------------------------------------------------------------------- */
+
+.button-91 {
+    --b: 3px;
+    --s: .45em;
+    --color: #373B44;
+
+    padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+    color: var(--color);
+    --_p: var(--s);
+    background:
+        conic-gradient(from 90deg at var(--b) var(--b), #0000 90deg, var(--color) 0) var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+    transition: .3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #0000;
+    outline-offset: .6em;
+    font-size: 16px;
+
+    border: 0;
+
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+
+    /* Novas propriedades para ajustar a posição */
+    position: absolute; /* Define o posicionamento absoluto */
+    top: 1900px; /* Distância do topo */
+    right: 100px; /* Distância da esquerda */
+}
+
+.button-91:hover,
+.button-91:focus-visible {
+    --_p: 0px;
+    outline-color: var(--color);
+    outline-offset: .05em;
+}
+
+.button-91:active {
+    background: var(--color);
+    color: #fff;
+}

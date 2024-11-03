@@ -103,6 +103,29 @@ app.post('/login', (req, res) => {
   });
 });
 
+// Rota para inserir o progresso na coluna html
+app.post('/atualizar-progresso', (req, res) => {
+  const valor_html = 33; // Valor que queremos definir na coluna `html`
+  const valor_css = 0;   // Defina um valor para a coluna css
+  const valor_javascript = 0; // Defina um valor para a coluna javascript
+  const valor_mysql = 0; // Defina um valor para a coluna mysql
+  const valor_git = 0;   // Defina um valor para a coluna git
+
+  // Logando o valor que será inserido
+  console.log("Valor a ser inserido na coluna html:", valor_html);
+
+  // Inserindo um novo registro na tabela progresso
+  const insertSql = `INSERT INTO progresso (html, css, javascript, mysql, git) VALUES (?, ?, ?, ?, ?)`;
+  
+  db.query(insertSql, [valor_html, valor_css, valor_javascript, valor_mysql, valor_git], (err, insertResult) => {
+    if (err) {
+      console.error("Erro ao inserir:", err);
+      return res.status(500).json({ status: 'erro', message: err.message });
+    }
+
+  });
+});
+
 // Inicializando o servidor
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);

@@ -12,6 +12,7 @@
     <link rel="icon" href="../imgs/image-removebg-preview.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/txt.css">
+    <link rel="stylesheet" href="../CSS/Cbut.css">
 </head>
 
 <body>
@@ -129,16 +130,17 @@
         <img src="../imgs/logo.png" alt="Imagem" class="top-right-image">
 
         <div class="texto-canto">Aula 1 Html!</div>
-        
+
         <div style="text-align: center; margin-top: 5%;">
             <iframe width="300%" height="500" style="margin-top: 2%; 
-                       margin-left: 13%;
+                       margin-left: 15%;
                        border: 8px solid #695cfe; 
                        border-radius: 15px; 
                        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3); 
                        padding: 10px; 
                        background-color: #f600ea;" src="https://www.youtube.com/embed/sj0p9O85AIg?si=nAqM_UMZ_-c4x2ZV">
             </iframe>
+            <button id="button-89" class="button-89" role="button">Finalizar Aula</button>
         </div>
 
         <div class="texto-canto2">Aula 2 Html!</div>
@@ -153,6 +155,7 @@
                        padding: 10px; 
                        background-color: #f600ea;" src="https://www.youtube.com/embed/MOd8PCyEB88?si=r_NEA1IxhGYY3SoG">
             </iframe>
+            <button class="button-90" role="button">Finalizar Aula</button>
         </div>
 
         <div class="texto-canto3">Aula 3 Html!</div>
@@ -167,12 +170,38 @@
                        padding: 10px; 
                        background-color: #f600ea;" src="https://www.youtube.com/embed/1ntb19o-2MI?si=gfb-uwBzOVdmapmo">
             </iframe>
+            <button class="button-91" role="button">Finalizar Aula</button>
         </div>
-        
-
 
         <script src="../script.js"></script>
 
+
+        <script>
+            // Função para enviar a requisição ao backend
+            document.getElementById("button-89").addEventListener("click", () => {
+                const userId = 1; // substitua com o ID real do usuário
+
+                fetch('http://localhost:3000/atualizar-progresso', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ user_id: userId })
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === 'sucesso') {
+                            alert(data.message);
+                        } else {
+                            alert("Erro ao atualizar o progresso.");
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Erro:", error);
+                        alert("Erro ao conectar ao servidor.");
+                    });
+            });
+        </script>
     </body>
 
     </html>
