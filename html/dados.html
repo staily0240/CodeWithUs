@@ -127,101 +127,118 @@
 
         <img src="../imgs/logo.png" alt="Imagem" class="top-right-image">
 
+        <!-- -------------- -->
+
         <div class="profile-card">
-            <input type="file" id="fileInput" accept="image/*" style="display: none;"
-                onchange="changeProfilePicture(event)">
-            <img id="profileImage" class="profile-img" src="https://i.pravatar.cc/75" alt="User Profile Picture"
-                onclick="document.getElementById('fileInput').click();">
+            <img id="profileImage" class="profile-img" src="../imgs/transferir (4).jfif" alt="User Profile Picture">
             <div class="user-info">
-                <h2 id="username">Jane Smith</h2>
-                <p id="useremail">jane.smith@example.com</p>
-                <p id="userphone">+55 12 34567-8901</p>
+                <h2 id="username">Loading...</h2>
+                <p id="useremail">Loading...</p>
+                <p id="userphone">Loading...</p>
             </div>
 
             <div class="actions">
                 <button onclick="changeNickname()"><strong>Mudar Nickname</strong></button>
                 <button onclick="changePassword()"><strong>Mudar Senha</strong></button>
                 <button onclick="changePhoneNumber()"><strong>Mudar telefone</strong></button>
-                <button onclick="deleteAccount()"><strong>Apagar conta</strong></button>
+                <input type="file" id="fileInput" accept="image/*" style="display: none;"
+                    onchange="changeProfilePicture(event)">
+                <button onclick="document.getElementById('fileInput').click();"><strong>Mudar Imagem de
+                        Perfil</strong></button>
             </div>
         </div>
 
         <script>
-            // Simulação de dados de usuário
-            const user = {
-                name: "Jane Smith",
-                email: "jane.smith@example.com",
-                phone: "+55 12 34567-8901",
-                image: "https://i.pravatar.cc/75"
-            };
-
-            // Populando os dados do usuário na página
-            document.getElementById('username').textContent = user.name;
-            document.getElementById('useremail').textContent = user.email;
-            document.getElementById('userphone').textContent = user.phone;
-
-            // Função para mudar a foto de perfil
             function changeProfilePicture(event) {
                 const file = event.target.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = function (e) {
-                        const profileImage = document.getElementById('profileImage');
-                        profileImage.src = e.target.result;
-                    }
-                    reader.readAsDataURL(file);
-                }
-            }
+                const formData = new FormData();
+                formData.append('profileImage', file);
+                formData.append('userId', 1); // Substitua pelo ID do usuário logado
 
-            // Função para mudar o nickname
-            function changeNickname() {
-                const newNickname = prompt("Enter your new nickname:");
-                if (newNickname) {
-                    user.name = newNickname;
-                    document.getElementById('username').textContent = newNickname;
-                    alert("Nickname changed successfully!");
-                }
+                fetch('/update-profile-image', {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert('Imagem de perfil atualizada com sucesso!');
+                            // Atualize a imagem no frontend
+                            document.getElementById('profileImage').src = data.imagePath; // Supondo que a resposta retorna o novo caminho da imagem
+                        } else {
+                            alert('Erro ao atualizar a imagem de perfil.');
+                        }
+                    })
+                    .catch(error => console.error('Erro:', error));
             }
-
-            // Função para mudar a senha
-            function changePassword() {
-                const newPassword = prompt("Enter your new password:");
-                if (newPassword) {
-                    alert("Password changed successfully!");
-                    // Aqui você pode adicionar a lógica para atualizar a senha no backend
-                }
-            }
-
-            // Função para mudar o número de telefone
-            function changePhoneNumber() {
-                const newPhone = prompt("Enter your new phone number:");
-                if (newPhone) {
-                    const confirmationCode = Math.floor(1000 + Math.random() * 9000);
-                    alert(`A confirmation code has been sent to ${newPhone}: ${confirmationCode}`);
-                    const userCode = prompt("Enter the confirmation code:");
-                    if (userCode == confirmationCode) {
-                        user.phone = newPhone;
-                        document.getElementById('userphone').textContent = newPhone;
-                        alert("Phone number changed successfully!");
-                    } else {
-                        alert("Confirmation code is incorrect.");
-                    }
-                }
-            }
-
-            // Função para apagar o cadastro
-            function deleteAccount() {
-                const confirmDelete = confirm("Are you sure you want to delete your account?");
-                if (confirmDelete) {
-                    alert("Your account has been deleted.");
-                    // Aqui você pode adicionar a lógica para deletar o usuário no backend
-                }
-            }
-
         </script>
 
+
+        <script>
+            // Função para buscar dados do usuário e atualizar o DOM
+            function fetchUserData(userId) {
+                fetch(`/user/${userId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('username').textContent = data.username;
+                        document.getElementById('useremail').textContent = data.email;
+                        document.getElementById('userphone').textContent = data.telefone;
+                    })
+                    .catch(error => console.error('Erro ao buscar os dados do usuário:', error));
+            }
+
+            // Chamar a função com o ID do usuário desejado
+            fetchUserData(1); // Substitua '1' pelo ID do usuário desejado
+        </script>
+
+        <script>
+            function changeNickname() {
+                const newNickname = prompt("Digite o novo nickname:");
+                if (newNickname) {
+                    updateUser('nickname', newNickname);
+                }
+            }
+
+            function changePassword() {
+                const newPassword = prompt("Digite a nova senha:");
+                if (newPassword) {
+                    updateUser('password', newPassword);
+                }
+            }
+
+            function changePhoneNumber() {
+                const newPhone = prompt("Digite o novo telefone:");
+                if (newPhone) {
+                    updateUser('phone', newPhone);
+                }
+            }
+
+            function updateUser(field, value) {
+                const userId = 1; // Substitua pelo ID do usuário logado
+                fetch(`/update-user`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ userId, field, value })
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert('Informação atualizada com sucesso!');
+                            location.reload(); // Atualiza a página para mostrar os novos dados
+                        } else {
+                            alert('Erro ao atualizar a informação.');
+                        }
+                    })
+                    .catch(error => console.error('Erro:', error));
+            }
+        </script>
+
+        <!-- -------------- -->
+
         <script src="../script.js"></script>
-        
+
     </body>
 
     </html>

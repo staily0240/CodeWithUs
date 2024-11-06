@@ -19,10 +19,9 @@
     -webkit-user-select: none;
     touch-action: manipulation;
 
-    /* Novas propriedades para ajustar a posição */
-    position: absolute; /* Define o posicionamento absoluto */
-    top: 640px; /* Distância do topo */
-    right: 100px; /* Distância da esquerda */
+    position: absolute; 
+    top: 670px; 
+    right: 200px; 
 }
 
 .button-89:hover,
@@ -60,10 +59,9 @@
     -webkit-user-select: none;
     touch-action: manipulation;
 
-    /* Novas propriedades para ajustar a posição */
-    position: absolute; /* Define o posicionamento absoluto */
-    top: 1300px; /* Distância do topo */
-    right: 100px; /* Distância da esquerda */
+    position: absolute; 
+    top: 1350px; 
+    right: 200px; 
 }
 
 .button-90:hover,
@@ -101,10 +99,9 @@
     -webkit-user-select: none;
     touch-action: manipulation;
 
-    /* Novas propriedades para ajustar a posição */
-    position: absolute; /* Define o posicionamento absoluto */
-    top: 1900px; /* Distância do topo */
-    right: 100px; /* Distância da esquerda */
+    position: absolute; 
+    top: 2000px;
+    right: 200px;
 }
 
 .button-91:hover,
