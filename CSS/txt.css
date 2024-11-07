@@ -1,17 +1,17 @@
 .texto-canto {
     position: absolute;
-    top: 14%;
-    right: 650px;
+    top: 11%;
+    right: 590px;
     color: rgb(0, 0, 0);
     font-size: 30px; /* Tamanho da fonte */
     font-family: 'Chakra Petch', sans-serif;
     font-weight: bold; /* Deixa o texto mais grosso */
-}
+}   
 
 .texto-canto2 {
     position: absolute;
-    top: 97%;
-    right: 650px;
+    top: 100%;
+    right: 590px;
     color: rgb(0, 0, 0);
     font-size: 30px; /* Tamanho da fonte */
     font-family: 'Chakra Petch', sans-serif;
@@ -20,8 +20,8 @@
 
 .texto-canto3 {
     position: absolute;
-    top: 186%;
-    right: 650px;
+    top: 193%;
+    right: 590px;
     color: rgb(0, 0, 0);
     font-size: 30px; /* Tamanho da fonte */
     font-family: 'Chakra Petch', sans-serif;
@@ -31,7 +31,7 @@
 .texto-cantog {
     position: absolute;
     top: 15%;
-    right: 700px;
+    right: 620px;
     color: rgb(0, 0, 0);
     font-size: 30px; /* Tamanho da fonte */
     font-family: 'Chakra Petch', sans-serif;
