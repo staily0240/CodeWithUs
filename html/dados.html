@@ -136,43 +136,16 @@
                 <p id="useremail">Loading...</p>
                 <p id="userphone">Loading...</p>
             </div>
-
+        
             <div class="actions">
+                <button onclick="changeProfileImage()"><strong>Mudar Imagem</strong></button>
                 <button onclick="changeNickname()"><strong>Mudar Nickname</strong></button>
                 <button onclick="changePassword()"><strong>Mudar Senha</strong></button>
                 <button onclick="changePhoneNumber()"><strong>Mudar telefone</strong></button>
-                <input type="file" id="fileInput" accept="image/*" style="display: none;"
-                    onchange="changeProfilePicture(event)">
-                <button onclick="document.getElementById('fileInput').click();"><strong>Mudar Imagem de
-                        Perfil</strong></button>
             </div>
+            <input type="file" id="fileInput" accept="image/*" style="display: none;" onchange="uploadImage(event)">
         </div>
-
-        <script>
-            function changeProfilePicture(event) {
-                const file = event.target.files[0];
-                const formData = new FormData();
-                formData.append('profileImage', file);
-                formData.append('userId', 1); // Substitua pelo ID do usuário logado
-
-                fetch('/update-profile-image', {
-                    method: 'POST',
-                    body: formData
-                })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.success) {
-                            alert('Imagem de perfil atualizada com sucesso!');
-                            // Atualize a imagem no frontend
-                            document.getElementById('profileImage').src = data.imagePath; // Supondo que a resposta retorna o novo caminho da imagem
-                        } else {
-                            alert('Erro ao atualizar a imagem de perfil.');
-                        }
-                    })
-                    .catch(error => console.error('Erro:', error));
-            }
-        </script>
-
+        
 
         <script>
             // Função para buscar dados do usuário e atualizar o DOM
@@ -225,7 +198,7 @@
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
-                            alert('Informação atualizada com sucesso!');
+                            // alert('Informação atualizada com sucesso!');
                             location.reload(); // Atualiza a página para mostrar os novos dados
                         } else {
                             alert('Erro ao atualizar a informação.');

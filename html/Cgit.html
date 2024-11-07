@@ -12,6 +12,7 @@
     <link rel="icon" href="../imgs/image-removebg-preview.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/txt.css">
+    <link rel="stylesheet" href="../CSS/Cgit.css">
 
 </head>
 
@@ -140,7 +141,29 @@
                        padding: 10px; 
                        background-color: #f600ea;" src="https://www.youtube.com/embed/LXswnjdpAUI?si=SwxPhSMP4N8tcdH5">
             </iframe>
-        </div>   
+            <button id="button-7" class="button-7" role="button">Finalizar Aula</button>
+
+        </div>
+
+        <script>
+            document.getElementById('button-7').addEventListener('click', () => {
+                fetch('/update-value7', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                })
+                    .then(response => response.text())
+                    .then(data => {
+                        console.log(data);
+                        // alert('Valor atualizado com sucesso');
+                    })
+                    .catch(error => {
+                        console.error('Erro:', error);
+                        alert('Erro ao atualizar o valor');
+                    });
+            });
+        </script>
 
 
         <script src="../script.js"></script>

@@ -218,6 +218,182 @@ app.post('/update-user', async (req, res) => {
     res.status(500).json({ success: false });
   }
 });
+
+// API que retorna os dados de progresso
+app.get('/api/progresso', (req, res) => {
+  // Consulta SQL para buscar o progresso
+  db.query('SELECT * FROM progresso WHERE id = 1', (err, results) => {
+    if (err) {
+      console.error('Erro ao executar consulta: ' + err.stack);
+      res.status(500).send('Erro ao acessar o banco de dados');
+      return;
+    }
+
+    if (results.length > 0) {
+      const progresso = results[0]; 
+      res.json({
+        html: progresso.html,
+        css: progresso.css,
+        javascript: progresso.javascript,
+        mysql: progresso.mysql,
+        git: progresso.git
+      });
+    } else {
+      res.status(404).send('Progresso não encontrado');
+    }
+  });
+});
+
+// Rota para atualizar o valor onde o id é 2
+app.post('/update-value1', (req, res) => {
+  const newValue = 33;
+  const updateQuery = 'UPDATE progresso SET css = ? WHERE id = 1';
+
+  db.query(updateQuery, [newValue], (err, result) => {
+    if (err) {
+      console.error('Erro ao atualizar o valor:', err);
+      return res.status(500).send('Erro ao atualizar o valor');
+    }
+
+    res.send('Valor atualizado com sucesso');
+  });
+});
+
+// Rota para atualizar o valor onde o id é 2
+app.post('/update-value2', (req, res) => {
+  const newValue = 66;
+  const updateQuery = 'UPDATE progresso SET css = ? WHERE id = 1';
+
+  db.query(updateQuery, [newValue], (err, result) => {
+    if (err) {
+      console.error('Erro ao atualizar o valor:', err);
+      return res.status(500).send('Erro ao atualizar o valor');
+    }
+
+    res.send('Valor atualizado com sucesso');
+  });
+});
+
+// Rota para atualizar o valor onde o id é 2
+app.post('/update-value3', (req, res) => {
+  const newValue = 100;
+  const updateQuery = 'UPDATE progresso SET css = ? WHERE id = 1';
+
+  db.query(updateQuery, [newValue], (err, result) => {
+    if (err) {
+      console.error('Erro ao atualizar o valor:', err);
+      return res.status(500).send('Erro ao atualizar o valor');
+    }
+
+    res.send('Valor atualizado com sucesso');
+  });
+});
+
+// Rota para atualizar o valor onde o id é 2
+app.post('/update-value4', (req, res) => {
+  const newValue = 33;
+  const updateQuery = 'UPDATE progresso SET javascript = ? WHERE id = 1';
+
+  db.query(updateQuery, [newValue], (err, result) => {
+    if (err) {
+      console.error('Erro ao atualizar o valor:', err);
+      return res.status(500).send('Erro ao atualizar o valor');
+    }
+
+    res.send('Valor atualizado com sucesso');
+  });
+});
+
+// Rota para atualizar o valor onde o id é 2
+app.post('/update-value5', (req, res) => {
+  const newValue = 66;
+  const updateQuery = 'UPDATE progresso SET javascript = ? WHERE id = 1';
+
+  db.query(updateQuery, [newValue], (err, result) => {
+    if (err) {
+      console.error('Erro ao atualizar o valor:', err);
+      return res.status(500).send('Erro ao atualizar o valor');
+    }
+
+    res.send('Valor atualizado com sucesso');
+  });
+});
+
+// Rota para atualizar o valor onde o id é 2
+app.post('/update-value6', (req, res) => {
+  const newValue = 100;
+  const updateQuery = 'UPDATE progresso SET javascript = ? WHERE id = 1';
+
+  db.query(updateQuery, [newValue], (err, result) => {
+    if (err) {
+      console.error('Erro ao atualizar o valor:', err);
+      return res.status(500).send('Erro ao atualizar o valor');
+    }
+
+    res.send('Valor atualizado com sucesso');
+  });
+});
+
+// Rota para atualizar o valor onde o id é 2
+app.post('/update-value7', (req, res) => {
+  const newValue = 100;
+  const updateQuery = 'UPDATE progresso SET git = ? WHERE id = 1';
+
+  db.query(updateQuery, [newValue], (err, result) => {
+    if (err) {
+      console.error('Erro ao atualizar o valor:', err);
+      return res.status(500).send('Erro ao atualizar o valor');
+    }
+
+    res.send('Valor atualizado com sucesso');
+  });
+});
+
+// Rota para atualizar o valor onde o id é 2
+app.post('/update-value8', (req, res) => {
+  const newValue = 33;
+  const updateQuery = 'UPDATE progresso SET mysql = ? WHERE id = 1';
+
+  db.query(updateQuery, [newValue], (err, result) => {
+    if (err) {
+      console.error('Erro ao atualizar o valor:', err);
+      return res.status(500).send('Erro ao atualizar o valor');
+    }
+
+    res.send('Valor atualizado com sucesso');
+  });
+});
+
+// Rota para atualizar o valor onde o id é 2
+app.post('/update-value9', (req, res) => {
+  const newValue = 66;
+  const updateQuery = 'UPDATE progresso SET mysql = ? WHERE id = 1';
+
+  db.query(updateQuery, [newValue], (err, result) => {
+    if (err) {
+      console.error('Erro ao atualizar o valor:', err);
+      return res.status(500).send('Erro ao atualizar o valor');
+    }
+
+    res.send('Valor atualizado com sucesso');
+  });
+});
+
+// Rota para atualizar o valor onde o id é 2
+app.post('/update-value10', (req, res) => {
+  const newValue = 100;
+  const updateQuery = 'UPDATE progresso SET mysql = ? WHERE id = 1';
+
+  db.query(updateQuery, [newValue], (err, result) => {
+    if (err) {
+      console.error('Erro ao atualizar o valor:', err);
+      return res.status(500).send('Erro ao atualizar o valor');
+    }
+
+    res.send('Valor atualizado com sucesso');
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);
 });

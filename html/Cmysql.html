@@ -12,6 +12,7 @@
     <link rel="icon" href="../imgs/image-removebg-preview.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/txt.css">
+    <link rel="stylesheet" href="../CSS/Cmysql.css">
 </head>
 
 <body>
@@ -139,7 +140,29 @@
                        padding: 10px; 
                        background-color: #f600ea;" src="https://www.youtube.com/embed/Ptbk2af68e8?si=yLXNS_8FXCWr4LYF">
             </iframe>
+            <button id="button-8" class="button-8" role="button">Finalizar Aula</button>
+
         </div>
+
+        <script>
+            document.getElementById('button-8').addEventListener('click', () => {
+                fetch('/update-value8', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                })
+                    .then(response => response.text())
+                    .then(data => {
+                        console.log(data);
+                        // alert('Valor atualizado com sucesso');
+                    })
+                    .catch(error => {
+                        console.error('Erro:', error);
+                        alert('Erro ao atualizar o valor');
+                    });
+            });
+        </script>
 
         <div class="texto-canto2">Aula 2 JavaScript!</div>
 
@@ -154,7 +177,30 @@
                        padding: 10px; 
                        background-color: #f600ea;" src="https://www.youtube.com/embed/rUTKomc2gG8?si=18msSgdVE9jVqK58">
             </iframe>
+            <button id="button-9" class="button-9" role="button">Finalizar Aula</button>
+
         </div>
+
+        <script>
+            document.getElementById('button-9').addEventListener('click', () => {
+                fetch('/update-value9', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                })
+                    .then(response => response.text())
+                    .then(data => {
+                        console.log(data);
+                        // alert('Valor atualizado com sucesso');
+                    })
+                    .catch(error => {
+                        console.error('Erro:', error);
+                        alert('Erro ao atualizar o valor');
+                    });
+            });
+        </script>
+
 
         <div class="texto-canto3">Aula 3 JavaScript!</div>
 
@@ -169,8 +215,33 @@
                        padding: 10px; 
                        background-color: #f600ea;" src="https://www.youtube.com/embed/FdePtO5JSd0?si=dSoP8K7_CBp7PyFA">
             </iframe>
+            <button id="button-10" class="button-10" role="button">Finalizar Aula</button>
+
         </div>
+
+        <script>
+            document.getElementById('button-10').addEventListener('click', () => {
+                fetch('/update-value10', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                })
+                    .then(response => response.text())
+                    .then(data => {
+                        console.log(data);
+                        // alert('Valor atualizado com sucesso');
+                    })
+                    .catch(error => {
+                        console.error('Erro:', error);
+                        alert('Erro ao atualizar o valor');
+                    });
+            });
+        </script>
+
         
+
+       
 
 
         <script src="../script.js"></script>
