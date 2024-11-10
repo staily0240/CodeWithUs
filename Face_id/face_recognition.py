@@ -1,9 +1,16 @@
 import cv2
 import numpy as np
+import os
 
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
-imagem_referencia = cv2.imread("imgs/WIN_20241110_01_02_52_Pro.jpg")
+pasta_imgs_faceid = "imgs_faceid"
+
+imagem_referencia = cv2.imread(os.path.join(pasta_imgs_faceid, "imagem_face_id_1.jpg"))  
+if imagem_referencia is None:
+    print("Erro ao carregar a imagem de referência.")
+    exit()
+
 imagem_referencia_gray = cv2.cvtColor(imagem_referencia, cv2.COLOR_BGR2GRAY)
 
 faces_referencia = face_cascade.detectMultiScale(imagem_referencia_gray, scaleFactor=1.1, minNeighbors=5)
